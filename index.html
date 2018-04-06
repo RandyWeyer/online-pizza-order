@@ -17,6 +17,9 @@
         <p>Choose the size of the pizza, the sauce and the toppings. There is a maximum of seven toppings for all pizzas, as the ingredients don't cook properly.</p>
 
         <div class="savory-pizza">
+
+          <button class="btn btn-warning change-pizza-type">I want a dessert pizza</button>
+
           <form id="order-pizza">
 
             <div class="col-md-12">
@@ -37,8 +40,8 @@
                 <option value="thin">Thin</option>
                 <option value="flatbread">Flatbread</option>
                 <option value="thick">Thick</option>
-                <option value="cheese-filled">Cheese-filled</option>
-                <option value="chicago-deep-dish">Chicago Deep Dish</option>
+                <option value="cheese-stuffed">Cheese Stuffed Crust (30% more)</option>
+                <option value="chicago-deep-dish">Chicago Deep Dish (50% more)</option>
               </select>
             </div>
 
@@ -46,7 +49,7 @@
               <h3>Pizza Sauce:</h3>
               <select id="pizza-sauce">
                 <option value="marinara">Marinara</option>
-                <option value="alfredo">Alfredo</option>
+                <option value="alfredo">Alfredo (20% more)</option>
                 <option value="pesto">Pesto</option>
                 <option value="bbqsauce">BBQ sauce</option>
                 <option value="ranch">Ranch</option>
@@ -58,6 +61,7 @@
               <ul>
                 <li class="col-md-6">
                   <h3>Meat</h3>
+                  <em>Add $1 per item</em>
                   <br>
                   <input id="pepperoni" type="checkbox">
                   <label for="pepperoni">Pepperoni</label>
@@ -69,22 +73,23 @@
                   <label for="chicken">Chicken</label>
                   <br>
                   <input id="pork" type="checkbox">
-                  <label for="pork">Pulled Pork</label>
+                  <label for="pork">Pulled Pork <em>(Add $.25)</em></label>
                   <br>
                   <input id="ham" type="checkbox">
-                  <label for="ham">Ham</label>
-                  <br>
-                  <input id="bacon" type="checkbox">
-                  <label for="bacon">Bacon</label>
+                  <label for="ham">Ham <em>(Add $.25)</em></label>
                   <br>
                   <input id="pancetta" type="checkbox">
-                  <label for="pancetta">Pancetta</label>
+                  <label for="pancetta">Pancetta <em>(Add $.50)</em></label>
+                  <br>
+                  <input id="bacon" type="checkbox">
+                  <label for="bacon">Bacon <em>(Add $1)</em></label>
                   <br>
                   <input id="chorizo" type="checkbox">
-                  <label for="chorizo">Chorizo</label>
+                  <label for="chorizo">Chorizo <em>(Add $1)</em></label>
                 </li>
                 <li class="col-md-6">
                   <h3>Veggies</h3>
+                  <em>Add $.25 per item</em>
                   <br>
                   <input id="red-onions" type="checkbox">
                   <label for="red-onions">Red Onions</label>
@@ -105,13 +110,13 @@
                   <label for="green-peppers">Green Peppers</label>
                   <br>
                   <input id="sun-dried-tomatoes" type="checkbox">
-                  <label for="sun-dried-tomatoes">Sun Dried Tomatoes</label>
+                  <label for="sun-dried-tomatoes">Sun Dried Tomatoes <em>(Add $.25)</em></label>
                   <br>
                   <input id="pineapple" type="checkbox">
-                  <label for="pineapple">Pineapple</label>
+                  <label for="pineapple">Pineapple <em>(Add $.50)</em></label>
                   <br>
                   <input id="asparagus" type="checkbox">
-                  <label for="asparagus">Asparagus</label>
+                  <label for="asparagus">Asparagus <em>(Add $.75)</em></label>
                 </li>
               </ul>
             </div>
@@ -120,14 +125,14 @@
 
           </form>
 
-          <button class="btn btn-warning change-pizza-type">I want a dessert pizza</button>
-
         </div>
         <!-- End of Savory Pizza -->
 
         <div class="sweet-pizza">
 
           <p>All dessert pizzas use chocolate chips instead of cheese. Most of the toppings are different types of fruit that are complimentary to each other and the different types of pizza doughs. The chocolate is made in-house and works with all the types of sauces. Don't worry, we've tried most of the combinations and they were all good.</p>
+
+          <button class="btn btn-warning change-pizza-type">I want a savory pizza</button>
 
           <form id="order-dessert-pizza">
 
@@ -160,14 +165,15 @@
                 <option value="frosting">Frosting</option>
                 <option value="chocolate-sauce">Chocolate Sauce</option>
                 <option value="marshmallow">Marshmallow</option>
-                <option value="nutella">Nutella</option>
-                <option value="strawberry-sauce">Strawberry Sauce</option>
-                <option value="cherry-sauce">Cherry Sauce</option>
+                <option value="nutella">Nutella (10% more)</option>
+                <option value="strawberry-sauce">Strawberry Sauce (15% more)</option>
+                <option value="cherry-sauce">Cherry Sauce (20% more)</option>
               </select>
             </div>
 
             <div class="col-md-12">
               <h3>Pizza Toppings:</h3>
+              <em>Add $.25 per item</em>
               <ul>
                 <li class="col-md-6">
                   <h3>Toppings</h3>
@@ -182,10 +188,10 @@
                   <label for="banana-slices">Banana Slices</label>
                   <br>
                   <input id="kiwi" type="checkbox">
-                  <label for="kiwi">Kiwi</label>
+                  <label for="kiwi">Kiwi <em>(Add $.75)</em></label>
                   <br>
                   <input id="peaches" type="checkbox">
-                  <label for="peaches">Peaches</label>
+                  <label for="peaches">Peaches <em>(Add $.25)</em></label>
                   <br>
                   <input id="extra-chocolate-chips" type="checkbox">
                   <label for="extra-chocolate-chips">Extra Chocolate Chips</label>
@@ -203,7 +209,6 @@
 
           </form>
 
-          <button class="btn btn-warning change-pizza-type">I want a savory pizza</button>
         </div>
         <!-- End of Sweet Pizza -->
 

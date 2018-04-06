@@ -6,6 +6,55 @@ function Pizza(diameter, crust, sauce, toppings) {
   this.toppings = toppings;
 }
 
+Pizza.prototype.getPizzaPrice = function(orderedPizza) {
+  var pizzaPrice = 0;
+  var crustSaucePrice = ((Math.PI * ((this.diameter/2)*(this.diameter/2)))/10) //Area of circle divided by 10
+
+  // Crust modifiers
+  if (this.crust.includes("cheese-stuffed")){crustSaucePrice*=1.3}
+  if (this.crust.includes("chicago-deep-dish")){crustSaucePrice*=1.5}
+
+  // Sauce modifiers
+  if (this.sauce.includes("alfredo")){crustSaucePrice*=1.2}
+  if (this.sauce.includes("nutella")){crustSaucePrice*=1.1}
+  if (this.sauce.includes("strawberry-sauce")){crustSaucePrice*=1.15}
+  if (this.sauce.includes("cherry-sauce")){crustSaucePrice*=1.2}
+
+  // Toppings modifiers
+  var toppingsTotal = this.toppings.length * .25;
+  if (this.toppings.includes("pepperoni")){toppingsTotal+=.75}
+  if (this.toppings.includes("sausage")){toppingsTotal+=.75}
+  if (this.toppings.includes("chicken")){toppingsTotal+=.75}
+  if (this.toppings.includes("pork")){toppingsTotal+=1}
+  if (this.toppings.includes("ham")){toppingsTotal+=1}
+  if (this.toppings.includes("bacon")){toppingsTotal+=1.75}
+  if (this.toppings.includes("pancetta")){toppingsTotal+=1.25}
+  if (this.toppings.includes("chorizo")){toppingsTotal+=1.75}
+
+  if (this.toppings.includes("sun-dried-tomatoes")){toppingsTotal+=.25}
+  if (this.toppings.includes("pineapple")){toppingsTotal+=.5}
+  if (this.toppings.includes("asparagus")){toppingsTotal+=.75}
+
+  if (this.toppings.includes("peaches")){toppingsTotal+=.25}
+  if (this.toppings.includes("kiwi")){toppingsTotal+=.75}
+
+  var pizzaPrice = crustSaucePrice + toppingsTotal;
+  var pizzaPriceCurrency = pizzaPrice.toFixed(2);
+  console.log(pizzaPriceCurrency);
+  console.log(toppingsTotal);
+  return pizzaPriceCurrency;
+}
+
+function changePizzaType() {
+  $(".savory-pizza").toggle();
+  $(".sweet-pizza").toggle();
+}
+
+function salesTax(totalBeforeTax) {
+  totalAfterTax = totalBeforeTax * 1.065;
+  return totalAfterTax;
+}
+
 // Front End Logic
 $(document).ready(function(){
 
@@ -31,6 +80,7 @@ $(document).ready(function(){
     orderedPizza = new Pizza(pizzaDiameter, pizzaCrust, pizzaSauce, pizzaToppings);
 
     console.log(orderedPizza);
+    orderedPizza.getPizzaPrice();
   });
 
   $("#order-dessert-pizza").submit(function(event) {
@@ -56,8 +106,12 @@ $(document).ready(function(){
   orderedPizza = new Pizza(pizzaDiameter, pizzaCrust, pizzaSauce, pizzaToppings);
 
   console.log(orderedPizza);
-
+  getPizzaPrice(orderedPizza);
   });
 
+  $(".change-pizza-type").click(function(event) {
+        event.preventDefault();
+        changePizzaType();
+  });
 
 });
