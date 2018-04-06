@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <title>Pizza Order</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/scripts.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1 class="col-md-12 page-header">Build a Pizza</h1>
+
+        <p>Choose the size of the pizza, the sauce and the toppings.</p>
+
+        <div "savory-pizza">
+          <form id="order-pizza">
+
+            <div class="col-md-6">
+              <h3>Diameter of Pizza:</h3>
+              <select id="pizza-diameter">
+                <option value="8">8"</option>   <!-- Personal -->
+                <option value="10">10"</option> <!-- Small -->
+                <option value="12">12"</option> <!-- Medium -->
+                <option value="14">14"</option> <!-- Large -->
+                <option value="16">16"</option> <!-- XLarge -->
+                <option value="18">18"</option> <!-- Take and Bake Size -->
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <h3>Pizza Crust:</h3>
+              <select id="pizza-crust">
+                <option value="thin">Thin</option>
+                <option value="flatbread">Flatbread</option>
+                <option value="thick">Thick</option>
+                <option value="cheese-filled">Cheese-filled</option>
+                <option value="chicago-deep-dish">Chicago Deep Dish</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <h3>Pizza Sauce:</h3>
+              <select id="pizza-sauce">
+                <option value="marinara">Marinara</option>
+                <option value="alfredo">Alfredo</option>
+                <option value="pesto">Pesto</option>
+                <option value="bbqsauce">BBQ sauce</option>
+                <option value="ranch">Ranch</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <h3>Pizza Toppings:</h3>
+              <ul>
+                <li class="col-md-6">
+                  <h3>Meat</h3>
+                  <br>
+                  <input id="pepperoni" type="checkbox">
+                  <label for="pepperoni">Pepperoni</label>
+                  <br>
+                  <input id="sausage" type="checkbox">
+                  <label for="sausage">Sausage</label>
+                  <br>
+                  <input id="chicken" type="checkbox">
+                  <label for="chicken">Chicken</label>
+                  <br>
+                  <input id="pork" type="checkbox">
+                  <label for="pork">Pulled Pork</label>
+                  <br>
+                  <input id="ham" type="checkbox">
+                  <label for="ham">Ham</label>
+                  <br>
+                  <input id="bacon" type="checkbox">
+                  <label for="bacon">Bacon</label>
+                  <br>
+                  <input id="pancetta" type="checkbox">
+                  <label for="pancetta">Pancetta</label>
+                  <br>
+                  <input id="chorizo" type="checkbox">
+                  <label for="chorizo">Chorizo</label>
+                </li>
+                <li class="col-md-6">
+                  <h3>Veggies</h3>
+                  <br>
+                  <input id="red-onions" type="checkbox">
+                  <label for="red-onions">Red Onions</label>
+                  <br>
+                  <input id="roma-tomatoes" type="checkbox">
+                  <label for="roma-tomatoes">Roma Tomatoes</label>
+                  <br>
+                  <input id="spinach" type="checkbox">
+                  <label for="spinach">Spinach</label>
+                  <br>
+                  <input id="kalamata-olives" type="checkbox">
+                  <label for="kalamata-olives">Kalamata Olives</label>
+                  <br>
+                  <input id="green-olives" type="checkbox">
+                  <label for="green-olives">Green Olives</label>
+                  <br>
+                  <input id="green-peppers" type="checkbox">
+                  <label for="green-peppers">Green Peppers</label>
+                  <br>
+                  <input id="sun-dried-tomatoes" type="checkbox">
+                  <label for="sun-dried-tomatoes">Sun Dried Tomatoes</label>
+                  <br>
+                  <input id="pineapple" type="checkbox">
+                  <label for="pineapple">Pineapple</label>
+                  <br>
+                  <input id="asparagus" type="checkbox">
+                  <label for="asparagus">Asparagus</label>
+                </li>
+              </ul>
+            </div>
+
+            <button type="submit" class="btn btn-success order-pizza-button">Order Pizza</button>
+
+          </form>
+
+          <button class="btn btn-warning change-pizza-type">I want a sweet pizza</button>
+
+        </div>
+        <!-- End of Savory Pizza -->
+
+        <div class="sweet-pizza">
+
+          <p>All dessert pizzas use chocolate chips instead of cheese. Most of the toppings are different types of fruit that are complimentary to each other and the different types of pizza doughs. The chocolate is made in-house and works with all the types of sauces. Don't worry, we've tried most of the combinations and they were all good.</p>
+
+          <form id="order-dessert-pizza">
+
+            <div class="col-md-6">
+              <h3>Diameter of Pizza:</h3>
+              <select id="pizza-diameter-sweet">
+                <option value="8">8"</option>   <!-- Personal -->
+                <option value="10">10"</option> <!-- Small -->
+                <option value="12">12"</option> <!-- Medium -->
+                <option value="14">14"</option> <!-- Large -->
+                <option value="16">16"</option> <!-- XLarge -->
+                <option value="18">18"</option> <!-- Take and Bake Size -->
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <h3>Pizza Crust:</h3>
+              <select id="pizza-crust-sweet">
+                <option value="cookie">Crisp Cookie</option>
+                <option value="chocolate-cookie">Crisp Chocolate Cookie</option>
+                <option value="cinnamon-bread">Cinnamon Bread</option>
+                <option value="chocolate-cracker">Chocolate Cracker</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <h3>Pizza "Sauce":</h3>
+              <select id="pizza-sauce-sweet">
+                <option value="creme-fraiche">Creme Fraiche</option>
+                <option value="frosting">Frosting</option>
+                <option value="chocolate-sauce">Chocolate Sauce</option>
+                <option value="marshmallow">Marshmallow</option>
+                <option value="strawberry-sauce">Strawberry Sauce</option>
+                <option value="cherry-sauce">Cherry Sauce</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <h3>Pizza Toppings:</h3>
+              <ul>
+                <li class="col-md-6">
+                  <h3>Toppings</h3>
+                  <br>
+                  <input id="strawberries" type="checkbox">
+                  <label for="strawberries">Strawberries</label>
+                  <br>
+                  <input id="blueberries" type="checkbox">
+                  <label for="blueberries">Blueberries</label>
+                  <br>
+                  <input id="banana-slices" type="checkbox">
+                  <label for="banana-slices">Banana Slices</label>
+                  <br>
+                  <input id="kiwi" type="checkbox">
+                  <label for="kiwi">Kiwi</label>
+                  <br>
+                  <input id="peaches" type="checkbox">
+                  <label for="peaches">Peaches</label>
+                  <br>
+                  <input id="extra-chocolate-chips" type="checkbox">
+                  <label for="extra-chocolate-chips">Extra Chocolate Chips</label>
+                  <br>
+                  <input id="chocolate-drizzle" type="checkbox">
+                  <label for="chocolate-drizzle">Chocolate Drizzle</label>
+                  <br>
+                  <input id="caramel-drizzle" type="checkbox">
+                  <label for="caramel-drizzle">Caramel Drizzle</label>
+                </li>
+              </ul>
+            </div>
+
+            <button type="submit" class="btn btn-success order-pizza-button">Order Pizza</button>
+
+          </form>
+
+          <button class="btn btn-warning change-pizza-type">I want a savory pizza</button>
+        </div>
+        <!-- End of Sweet Pizza -->
+
+      </div>
+      <!-- End of Row -->
+    </div>
+    <!-- End of Container -->
+  </body>
+</html>
