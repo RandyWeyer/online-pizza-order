@@ -28,19 +28,34 @@ $(document).ready(function(){
           pizzaToppings.push(inputs[i].id);
        }
     }
-
-
-
-
-    orderedPizza = new Pizza(pizzaDiameter, pizzaCrust,pizzaSauce,pizzaToppings);
+    orderedPizza = new Pizza(pizzaDiameter, pizzaCrust, pizzaSauce, pizzaToppings);
 
     console.log(orderedPizza);
-
-
   });
 
   $("#order-dessert-pizza").submit(function(event) {
     event.preventDefault();
+
+    var pizzaDiameter = document.getElementById("pizza-diameter-sweet").value;
+    var pizzaCrust = document.getElementById("pizza-crust-sweet").value;
+    var pizzaSauce = document.getElementById("pizza-sauce-sweet").value;
+
+
+
+    var form = document.getElementById("order-dessert-pizza"),
+        inputs = form.getElementsByTagName("input"),
+        pizzaToppings = [];
+
+    for (var i = 0, max = inputs.length; i < max; i++) {
+       if (inputs[i].type === "checkbox" && inputs[i].checked) {
+         if (pizzaToppings.length < 7)
+          pizzaToppings.push(inputs[i].id);
+       }
+    }
+
+  orderedPizza = new Pizza(pizzaDiameter, pizzaCrust, pizzaSauce, pizzaToppings);
+
+  console.log(orderedPizza);
 
   });
 
