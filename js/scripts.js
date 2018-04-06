@@ -40,8 +40,7 @@ Pizza.prototype.getPizzaPrice = function(orderedPizza) {
 
   var pizzaPrice = crustSaucePrice + toppingsTotal;
   var pizzaPriceCurrency = pizzaPrice.toFixed(2);
-  console.log(pizzaPriceCurrency);
-  console.log(toppingsTotal);
+
   return pizzaPriceCurrency;
 }
 
@@ -52,7 +51,13 @@ function changePizzaType() {
 
 function salesTax(totalBeforeTax) {
   totalAfterTax = totalBeforeTax * 1.065;
-  return totalAfterTax;
+  totalAfterTaxCurrency = totalAfterTax.toFixed(2);
+  return totalAfterTaxCurrency;
+}
+function showTotal() {
+  $(".savory-pizza").hide();
+  $(".sweet-pizza").hide();
+  $(".results").show();
 }
 
 // Front End Logic
@@ -79,8 +84,15 @@ $(document).ready(function(){
     }
     orderedPizza = new Pizza(pizzaDiameter, pizzaCrust, pizzaSauce, pizzaToppings);
 
-    console.log(orderedPizza);
-    orderedPizza.getPizzaPrice();
+    var TotalBeforeTax = orderedPizza.getPizzaPrice();
+
+    var TotalAfterTax = salesTax(TotalBeforeTax);
+
+    $(".total-before-tax").text(TotalBeforeTax);
+    $(".total-after-tax").text(TotalAfterTax);
+
+    showTotal();
+
   });
 
   $("#order-dessert-pizza").submit(function(event) {
@@ -105,8 +117,15 @@ $(document).ready(function(){
 
   orderedPizza = new Pizza(pizzaDiameter, pizzaCrust, pizzaSauce, pizzaToppings);
 
-  console.log(orderedPizza);
-  getPizzaPrice(orderedPizza);
+  var TotalBeforeTax = orderedPizza.getPizzaPrice();
+
+  var TotalAfterTax = salesTax(TotalBeforeTax);
+
+  $(".total-before-tax").text(TotalBeforeTax);
+  $(".total-after-tax").text(TotalAfterTax);
+
+  showTotal();
+
   });
 
   $(".change-pizza-type").click(function(event) {
